@@ -1,0 +1,80 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business", "Business", "{DDE5E2D4-E40B-4DD6-B3C4-D2AB66450DD7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WsNsftContabilidad.Business", "WsNsftContabilidad.Business\WsNsftContabilidad.Business.csproj", "{7567E243-8669-433B-BC56-4EDD9BD65ED4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WsNsftContabilidad.Business.Entities", "WsNsftContabilidad.Business.Entities\WsNsftContabilidad.Business.Entities.csproj", "{24BDDF0C-C10A-4F14-AA33-AAC7C9ED03D3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{B1F95CC5-12DA-4999-8B24-8850A2EA97EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WsNsftContabilidad.Data", "WsNsftContabilidad.Data\WsNsftContabilidad.Data.csproj", "{42349C99-1CA3-49D8-8828-6142BB661A3C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ClientePrueba", "ClientePrueba", "{CAB71BCF-7441-4DD9-B063-3E36C7189491}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClienteDelServicio", "ClienteDelServicio\ClienteDelServicio.csproj", "{999117EC-EA11-4C52-BC1C-4E1F979C09EF}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3E49B571-D3E7-4816-950D-ECBFAD471FF1} = {3E49B571-D3E7-4816-950D-ECBFAD471FF1}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Servicios", "Servicios", "{3958B752-51A2-4D89-8B05-ABBFDB54D011}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WsNsftContabilidad.Services.Core", "WsNsftContabilidad.Services.Core\WsNsftContabilidad.Services.Core.csproj", "{0D522CF9-5D0B-4611-B1B8-F78CB2DF3792}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WsNsftContabilidad.Services.Contracts", "WsNsftContabilidad.Services.Contracts\WsNsftContabilidad.Services.Contracts.csproj", "{0CDEFA6D-AFE2-4726-A9E4-3A00F711C854}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Hosts", "Hosts", "{0B0C3C5C-3E55-402D-9252-F139CF589D9F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WsNsftContabilidad.Hosts.Web", "WsNsftContabilidad.Hosts.Web\WsNsftContabilidad.Hosts.Web.csproj", "{3E49B571-D3E7-4816-950D-ECBFAD471FF1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7567E243-8669-433B-BC56-4EDD9BD65ED4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7567E243-8669-433B-BC56-4EDD9BD65ED4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7567E243-8669-433B-BC56-4EDD9BD65ED4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7567E243-8669-433B-BC56-4EDD9BD65ED4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24BDDF0C-C10A-4F14-AA33-AAC7C9ED03D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24BDDF0C-C10A-4F14-AA33-AAC7C9ED03D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24BDDF0C-C10A-4F14-AA33-AAC7C9ED03D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24BDDF0C-C10A-4F14-AA33-AAC7C9ED03D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42349C99-1CA3-49D8-8828-6142BB661A3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42349C99-1CA3-49D8-8828-6142BB661A3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42349C99-1CA3-49D8-8828-6142BB661A3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42349C99-1CA3-49D8-8828-6142BB661A3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{999117EC-EA11-4C52-BC1C-4E1F979C09EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{999117EC-EA11-4C52-BC1C-4E1F979C09EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{999117EC-EA11-4C52-BC1C-4E1F979C09EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{999117EC-EA11-4C52-BC1C-4E1F979C09EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D522CF9-5D0B-4611-B1B8-F78CB2DF3792}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D522CF9-5D0B-4611-B1B8-F78CB2DF3792}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D522CF9-5D0B-4611-B1B8-F78CB2DF3792}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D522CF9-5D0B-4611-B1B8-F78CB2DF3792}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CDEFA6D-AFE2-4726-A9E4-3A00F711C854}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CDEFA6D-AFE2-4726-A9E4-3A00F711C854}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CDEFA6D-AFE2-4726-A9E4-3A00F711C854}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CDEFA6D-AFE2-4726-A9E4-3A00F711C854}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E49B571-D3E7-4816-950D-ECBFAD471FF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E49B571-D3E7-4816-950D-ECBFAD471FF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E49B571-D3E7-4816-950D-ECBFAD471FF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E49B571-D3E7-4816-950D-ECBFAD471FF1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7567E243-8669-433B-BC56-4EDD9BD65ED4} = {DDE5E2D4-E40B-4DD6-B3C4-D2AB66450DD7}
+		{24BDDF0C-C10A-4F14-AA33-AAC7C9ED03D3} = {DDE5E2D4-E40B-4DD6-B3C4-D2AB66450DD7}
+		{42349C99-1CA3-49D8-8828-6142BB661A3C} = {B1F95CC5-12DA-4999-8B24-8850A2EA97EA}
+		{999117EC-EA11-4C52-BC1C-4E1F979C09EF} = {CAB71BCF-7441-4DD9-B063-3E36C7189491}
+		{0D522CF9-5D0B-4611-B1B8-F78CB2DF3792} = {3958B752-51A2-4D89-8B05-ABBFDB54D011}
+		{0CDEFA6D-AFE2-4726-A9E4-3A00F711C854} = {3958B752-51A2-4D89-8B05-ABBFDB54D011}
+		{3E49B571-D3E7-4816-950D-ECBFAD471FF1} = {0B0C3C5C-3E55-402D-9252-F139CF589D9F}
+	EndGlobalSection
+EndGlobal

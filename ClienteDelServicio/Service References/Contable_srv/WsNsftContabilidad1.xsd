@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://WsNsftContabilidad" elementFormDefault="qualified" targetNamespace="http://WsNsftContabilidad" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="CrearAsientoContable">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="asiento" nillable="true" type="tns:Asiento" />
+        <xs:element minOccurs="0" name="conexion" nillable="true" type="tns:ConexionWS" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="Asiento">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BatchNumbEncabezado" type="xs:int" />
+      <xs:element minOccurs="0" name="Memo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Number" type="xs:int" />
+      <xs:element minOccurs="0" name="ProfitCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Proyect" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoTransaccion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="lineas" nillable="true" type="tns:ArrayOfAsientoDetalle" />
+      <xs:element minOccurs="0" name="transIDEncabezado" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Asiento" nillable="true" type="tns:Asiento" />
+  <xs:complexType name="ArrayOfAsientoDetalle">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AsientoDetalle" nillable="true" type="tns:AsientoDetalle" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAsientoDetalle" nillable="true" type="tns:ArrayOfAsientoDetalle" />
+  <xs:complexType name="AsientoDetalle">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BaseRetencion" type="xs:double" />
+      <xs:element minOccurs="0" name="CodigoRetencion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Credit" type="xs:double" />
+      <xs:element minOccurs="0" name="Debit" type="xs:double" />
+      <xs:element minOccurs="0" name="Line_IDDetalle" type="xs:int" />
+      <xs:element minOccurs="0" name="PorcentaRetenciones" type="xs:double" />
+      <xs:element minOccurs="0" name="ProjectCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Reference1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Reference2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Reference3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShortName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="socioNegocio" nillable="true" type="tns:SocioNegocio" />
+      <xs:element minOccurs="0" name="transIDDetalle" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AsientoDetalle" nillable="true" type="tns:AsientoDetalle" />
+  <xs:complexType name="SocioNegocio">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CardCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CardName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Cellular" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="E_Mail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Fax" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LicTradNum" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Phone1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Phone2" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SocioNegocio" nillable="true" type="tns:SocioNegocio" />
+  <xs:complexType name="ConexionWS">
+    <xs:sequence>
+      <xs:element name="Contrasena" nillable="true" type="xs:string" />
+      <xs:element name="Usuario" nillable="true" type="xs:string" />
+      <xs:element name="UsuarioWsNsftContabilidad" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ConexionWS" nillable="true" type="tns:ConexionWS" />
+  <xs:element name="CrearAsientoContableResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CrearAsientoContableResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="DataAccessFault">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ErrorID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ErrorSAP" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DataAccessFault" nillable="true" type="tns:DataAccessFault" />
+</xs:schema>
