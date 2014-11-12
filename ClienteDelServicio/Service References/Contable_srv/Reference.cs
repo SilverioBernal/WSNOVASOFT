@@ -23,28 +23,37 @@ namespace ClienteDelServicio.Contable_srv {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int BatchNumbEncabezadoField;
+        private string AutoVatField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string MemoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int NumberField;
+        private string ProjectField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ProfitCodeField;
+        private string Ref1Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ProyectField;
+        private string Ref2Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string codigoTransaccionField;
+        private System.DateTime RefDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string StampTaxField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime TaxDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TransCodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime VatDateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Collections.Generic.List<ClienteDelServicio.Contable_srv.AsientoDetalle> lineasField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int transIDEncabezadoField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -57,14 +66,14 @@ namespace ClienteDelServicio.Contable_srv {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int BatchNumbEncabezado {
+        public string AutoVat {
             get {
-                return this.BatchNumbEncabezadoField;
+                return this.AutoVatField;
             }
             set {
-                if ((this.BatchNumbEncabezadoField.Equals(value) != true)) {
-                    this.BatchNumbEncabezadoField = value;
-                    this.RaisePropertyChanged("BatchNumbEncabezado");
+                if ((object.ReferenceEquals(this.AutoVatField, value) != true)) {
+                    this.AutoVatField = value;
+                    this.RaisePropertyChanged("AutoVat");
                 }
             }
         }
@@ -83,53 +92,105 @@ namespace ClienteDelServicio.Contable_srv {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Number {
+        public string Project {
             get {
-                return this.NumberField;
+                return this.ProjectField;
             }
             set {
-                if ((this.NumberField.Equals(value) != true)) {
-                    this.NumberField = value;
-                    this.RaisePropertyChanged("Number");
+                if ((object.ReferenceEquals(this.ProjectField, value) != true)) {
+                    this.ProjectField = value;
+                    this.RaisePropertyChanged("Project");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ProfitCode {
+        public string Ref1 {
             get {
-                return this.ProfitCodeField;
+                return this.Ref1Field;
             }
             set {
-                if ((object.ReferenceEquals(this.ProfitCodeField, value) != true)) {
-                    this.ProfitCodeField = value;
-                    this.RaisePropertyChanged("ProfitCode");
+                if ((object.ReferenceEquals(this.Ref1Field, value) != true)) {
+                    this.Ref1Field = value;
+                    this.RaisePropertyChanged("Ref1");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Proyect {
+        public string Ref2 {
             get {
-                return this.ProyectField;
+                return this.Ref2Field;
             }
             set {
-                if ((object.ReferenceEquals(this.ProyectField, value) != true)) {
-                    this.ProyectField = value;
-                    this.RaisePropertyChanged("Proyect");
+                if ((object.ReferenceEquals(this.Ref2Field, value) != true)) {
+                    this.Ref2Field = value;
+                    this.RaisePropertyChanged("Ref2");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string codigoTransaccion {
+        public System.DateTime RefDate {
             get {
-                return this.codigoTransaccionField;
+                return this.RefDateField;
             }
             set {
-                if ((object.ReferenceEquals(this.codigoTransaccionField, value) != true)) {
-                    this.codigoTransaccionField = value;
-                    this.RaisePropertyChanged("codigoTransaccion");
+                if ((this.RefDateField.Equals(value) != true)) {
+                    this.RefDateField = value;
+                    this.RaisePropertyChanged("RefDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string StampTax {
+            get {
+                return this.StampTaxField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StampTaxField, value) != true)) {
+                    this.StampTaxField = value;
+                    this.RaisePropertyChanged("StampTax");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime TaxDate {
+            get {
+                return this.TaxDateField;
+            }
+            set {
+                if ((this.TaxDateField.Equals(value) != true)) {
+                    this.TaxDateField = value;
+                    this.RaisePropertyChanged("TaxDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TransCode {
+            get {
+                return this.TransCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TransCodeField, value) != true)) {
+                    this.TransCodeField = value;
+                    this.RaisePropertyChanged("TransCode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime VatDate {
+            get {
+                return this.VatDateField;
+            }
+            set {
+                if ((this.VatDateField.Equals(value) != true)) {
+                    this.VatDateField = value;
+                    this.RaisePropertyChanged("VatDate");
                 }
             }
         }
@@ -143,19 +204,6 @@ namespace ClienteDelServicio.Contable_srv {
                 if ((object.ReferenceEquals(this.lineasField, value) != true)) {
                     this.lineasField = value;
                     this.RaisePropertyChanged("lineas");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int transIDEncabezado {
-            get {
-                return this.transIDEncabezadoField;
-            }
-            set {
-                if ((this.transIDEncabezadoField.Equals(value) != true)) {
-                    this.transIDEncabezadoField = value;
-                    this.RaisePropertyChanged("transIDEncabezado");
                 }
             }
         }
@@ -180,13 +228,7 @@ namespace ClienteDelServicio.Contable_srv {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string AccountCodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double BaseRetencionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CodigoRetencionField;
+        private string AccountField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double CreditField;
@@ -195,31 +237,43 @@ namespace ClienteDelServicio.Contable_srv {
         private double DebitField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int Line_IDDetalleField;
+        private System.DateTime DuoDateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double PorcentaRetencionesField;
+        private string LineMemoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ProjectCodeField;
+        private string OcrCode2Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string Reference1Field;
+        private string OcrCode3Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string Reference2Field;
+        private string ProfitCodeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string Reference3Field;
+        private string ProjectField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ShortNameField;
+        private string Ref1Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Ref2Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Ref3LineField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime RefDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime TaxDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string U_InfoCo01Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private ClienteDelServicio.Contable_srv.SocioNegocio socioNegocioField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int transIDDetalleField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -232,40 +286,14 @@ namespace ClienteDelServicio.Contable_srv {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string AccountCode {
+        public string Account {
             get {
-                return this.AccountCodeField;
+                return this.AccountField;
             }
             set {
-                if ((object.ReferenceEquals(this.AccountCodeField, value) != true)) {
-                    this.AccountCodeField = value;
-                    this.RaisePropertyChanged("AccountCode");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double BaseRetencion {
-            get {
-                return this.BaseRetencionField;
-            }
-            set {
-                if ((this.BaseRetencionField.Equals(value) != true)) {
-                    this.BaseRetencionField = value;
-                    this.RaisePropertyChanged("BaseRetencion");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CodigoRetencion {
-            get {
-                return this.CodigoRetencionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CodigoRetencionField, value) != true)) {
-                    this.CodigoRetencionField = value;
-                    this.RaisePropertyChanged("CodigoRetencion");
+                if ((object.ReferenceEquals(this.AccountField, value) != true)) {
+                    this.AccountField = value;
+                    this.RaisePropertyChanged("Account");
                 }
             }
         }
@@ -297,92 +325,157 @@ namespace ClienteDelServicio.Contable_srv {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Line_IDDetalle {
+        public System.DateTime DuoDate {
             get {
-                return this.Line_IDDetalleField;
+                return this.DuoDateField;
             }
             set {
-                if ((this.Line_IDDetalleField.Equals(value) != true)) {
-                    this.Line_IDDetalleField = value;
-                    this.RaisePropertyChanged("Line_IDDetalle");
+                if ((this.DuoDateField.Equals(value) != true)) {
+                    this.DuoDateField = value;
+                    this.RaisePropertyChanged("DuoDate");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public double PorcentaRetenciones {
+        public string LineMemo {
             get {
-                return this.PorcentaRetencionesField;
+                return this.LineMemoField;
             }
             set {
-                if ((this.PorcentaRetencionesField.Equals(value) != true)) {
-                    this.PorcentaRetencionesField = value;
-                    this.RaisePropertyChanged("PorcentaRetenciones");
+                if ((object.ReferenceEquals(this.LineMemoField, value) != true)) {
+                    this.LineMemoField = value;
+                    this.RaisePropertyChanged("LineMemo");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ProjectCode {
+        public string OcrCode2 {
             get {
-                return this.ProjectCodeField;
+                return this.OcrCode2Field;
             }
             set {
-                if ((object.ReferenceEquals(this.ProjectCodeField, value) != true)) {
-                    this.ProjectCodeField = value;
-                    this.RaisePropertyChanged("ProjectCode");
+                if ((object.ReferenceEquals(this.OcrCode2Field, value) != true)) {
+                    this.OcrCode2Field = value;
+                    this.RaisePropertyChanged("OcrCode2");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Reference1 {
+        public string OcrCode3 {
             get {
-                return this.Reference1Field;
+                return this.OcrCode3Field;
             }
             set {
-                if ((object.ReferenceEquals(this.Reference1Field, value) != true)) {
-                    this.Reference1Field = value;
-                    this.RaisePropertyChanged("Reference1");
+                if ((object.ReferenceEquals(this.OcrCode3Field, value) != true)) {
+                    this.OcrCode3Field = value;
+                    this.RaisePropertyChanged("OcrCode3");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Reference2 {
+        public string ProfitCode {
             get {
-                return this.Reference2Field;
+                return this.ProfitCodeField;
             }
             set {
-                if ((object.ReferenceEquals(this.Reference2Field, value) != true)) {
-                    this.Reference2Field = value;
-                    this.RaisePropertyChanged("Reference2");
+                if ((object.ReferenceEquals(this.ProfitCodeField, value) != true)) {
+                    this.ProfitCodeField = value;
+                    this.RaisePropertyChanged("ProfitCode");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Reference3 {
+        public string Project {
             get {
-                return this.Reference3Field;
+                return this.ProjectField;
             }
             set {
-                if ((object.ReferenceEquals(this.Reference3Field, value) != true)) {
-                    this.Reference3Field = value;
-                    this.RaisePropertyChanged("Reference3");
+                if ((object.ReferenceEquals(this.ProjectField, value) != true)) {
+                    this.ProjectField = value;
+                    this.RaisePropertyChanged("Project");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ShortName {
+        public string Ref1 {
             get {
-                return this.ShortNameField;
+                return this.Ref1Field;
             }
             set {
-                if ((object.ReferenceEquals(this.ShortNameField, value) != true)) {
-                    this.ShortNameField = value;
-                    this.RaisePropertyChanged("ShortName");
+                if ((object.ReferenceEquals(this.Ref1Field, value) != true)) {
+                    this.Ref1Field = value;
+                    this.RaisePropertyChanged("Ref1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Ref2 {
+            get {
+                return this.Ref2Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Ref2Field, value) != true)) {
+                    this.Ref2Field = value;
+                    this.RaisePropertyChanged("Ref2");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Ref3Line {
+            get {
+                return this.Ref3LineField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Ref3LineField, value) != true)) {
+                    this.Ref3LineField = value;
+                    this.RaisePropertyChanged("Ref3Line");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime RefDate {
+            get {
+                return this.RefDateField;
+            }
+            set {
+                if ((this.RefDateField.Equals(value) != true)) {
+                    this.RefDateField = value;
+                    this.RaisePropertyChanged("RefDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime TaxDate {
+            get {
+                return this.TaxDateField;
+            }
+            set {
+                if ((this.TaxDateField.Equals(value) != true)) {
+                    this.TaxDateField = value;
+                    this.RaisePropertyChanged("TaxDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string U_InfoCo01 {
+            get {
+                return this.U_InfoCo01Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.U_InfoCo01Field, value) != true)) {
+                    this.U_InfoCo01Field = value;
+                    this.RaisePropertyChanged("U_InfoCo01");
                 }
             }
         }
@@ -396,19 +489,6 @@ namespace ClienteDelServicio.Contable_srv {
                 if ((object.ReferenceEquals(this.socioNegocioField, value) != true)) {
                     this.socioNegocioField = value;
                     this.RaisePropertyChanged("socioNegocio");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int transIDDetalle {
-            get {
-                return this.transIDDetalleField;
-            }
-            set {
-                if ((this.transIDDetalleField.Equals(value) != true)) {
-                    this.transIDDetalleField = value;
-                    this.RaisePropertyChanged("transIDDetalle");
                 }
             }
         }

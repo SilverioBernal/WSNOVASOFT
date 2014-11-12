@@ -13,7 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{B1F95CC5-1
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WsNsftContabilidad.Data", "WsNsftContabilidad.Data\WsNsftContabilidad.Data.csproj", "{42349C99-1CA3-49D8-8828-6142BB661A3C}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ClientePrueba", "ClientePrueba", "{CAB71BCF-7441-4DD9-B063-3E36C7189491}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_ClientePrueba", "_ClientePrueba", "{CAB71BCF-7441-4DD9-B063-3E36C7189491}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClienteDelServicio", "ClienteDelServicio\ClienteDelServicio.csproj", "{999117EC-EA11-4C52-BC1C-4E1F979C09EF}"
 	ProjectSection(ProjectDependencies) = postProject

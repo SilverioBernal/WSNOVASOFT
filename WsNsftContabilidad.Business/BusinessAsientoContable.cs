@@ -13,14 +13,15 @@ namespace WsNsftContabilidad.Business
 {
     public class BusinessAsientoContable
     {
-        DataAsientoContable asientosData;
-
+        #region Atributos
         // ES ESTATICO NO REQUIERE Util utilidades;
         //ConexionSAP sapData;
-        DataConexionSAP sapData;
-        //SociosSAP socioData;
-        BusinessSocioNegocio socioData;
+        private DataConexionSAP sapData;
+        private BusinessSocioNegocio socioData;
+        private DataAsientoContable asientosData;
+        #endregion
 
+        #region Constructor
         public BusinessAsientoContable()
         {
             asientosData = new DataAsientoContable();
@@ -28,7 +29,9 @@ namespace WsNsftContabilidad.Business
             sapData = new DataConexionSAP();
             //no requiere implementación socioData = new SociosSAP();
         }
+        #endregion
 
+        #region Métodos
         /// <summary>
         /// Generar el pago en SAP
         /// </summary>
@@ -40,13 +43,9 @@ namespace WsNsftContabilidad.Business
             int numeroAsiento = -1;
             if (sapData.Conectar())
             {
-                
-
-                #region Asiento
+                #region Contenido del Asiento
                 try
                 {
-                    //SUSTITUCIÓN DE FUNCIONALIDAD BusinessSocioNegocio socio = socioData.ObtxFiltro(unPago.Socio.Codigo);
-
                     sapData.IniciarTransaccion();
 
                     if (asientoContable.lineas.Count > 0)
@@ -108,12 +107,12 @@ namespace WsNsftContabilidad.Business
                         return 0;
                     }
                     return numeroAsiento;
-                } 
+                }
                 #endregion
                 return numeroAsiento;
             }
             return numeroAsiento;
         }
-
+        #endregion
     }
 }

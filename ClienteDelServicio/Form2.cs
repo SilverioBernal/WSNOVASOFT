@@ -26,7 +26,7 @@ namespace ClienteDelServicio
 
             Asiento asiento = new Asiento()
             {
-                codigoTransaccion = "PAGO",
+                TransCode = "PAGO",
                 Memo = "Hola", 
                 lineas = new List<AsientoDetalle>()
             };
@@ -34,12 +34,12 @@ namespace ClienteDelServicio
 
             AsientoDetalle linea1 = new AsientoDetalle()
             {
-                AccountCode = "91050103",
+                Account = "91050103",
                 Credit = 1000
             };
             AsientoDetalle linea2 = new AsientoDetalle()
             {
-                AccountCode = "19202010",
+                Account = "19202010",
                 Debit = 1000
             };
 

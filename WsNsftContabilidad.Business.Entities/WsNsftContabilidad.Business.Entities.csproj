@@ -68,17 +68,6 @@
     <Compile Include="Excepciones\BusinessException.cs" />
     <Compile Include="Excepciones\Error.cs" />
     <Compile Include="Excepciones\SAPException.cs" />
-    <Compile Include="Pagos\Aseguradora.cs" />
-    <Compile Include="Pagos\Cuenta.cs" />
-    <Compile Include="Pagos\GlobalesPagos.cs" />
-    <Compile Include="Pagos\Impuesto.cs" />
-    <Compile Include="Pagos\InformacionPorPago.cs" />
-    <Compile Include="Pagos\MedioDePago.cs" />
-    <Compile Include="Pagos\PagoTO.cs" />
-    <Compile Include="Pagos\Ramo.cs" />
-    <Compile Include="Pagos\RemisionCobro.cs" />
-    <Compile Include="Pagos\RemisionCobroDetalle.cs" />
-    <Compile Include="Pagos\Saldo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Seguridad\ConexionBD.cs" />
     <Compile Include="Seguridad\ConexionSAP.cs" />

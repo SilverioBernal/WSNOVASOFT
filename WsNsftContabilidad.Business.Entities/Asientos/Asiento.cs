@@ -7,33 +7,51 @@ using System.Runtime.Serialization;
 
 namespace WsNsftContabilidad.Business.Entities.Asientos
 {
+    /// <summary>
+    /// Entidad para la gestion de asientos contables
+    /// </summary>
     [DataContract(Namespace = "http://WsNsftContabilidad")]
-    public  class Asiento
+    public class Asiento
     {
+        #region Atributos
         [DataMember]
-        public int transIDEncabezado { get; set; }
-        [DataMember]
-        public string codigoTransaccion { get; set; }
-        [DataMember]
-        public int BatchNumbEncabezado { get; set; }
-        [DataMember]
-        public int Number { get; set; }
-        [DataMember]
-        public string ProfitCode { get; set; }
-        [DataMember]
-        public string Proyect { get; set; }
+        public DateTime RefDate { get; set; }
         [DataMember]
         public string Memo { get; set; }
         [DataMember]
-        public List<AsientoDetalle> lineas { get; set; }
+        public string Ref1 { get; set; }
+        [DataMember]
+        public string Ref2 { get; set; }
+        [DataMember]
+        public string TransCode { get; set; }
+        [DataMember]
+        public string Project { get; set; }
+        [DataMember]
+        public DateTime TaxDate { get; set; }
+        [DataMember]
+        public DateTime VatDate { get; set; }
+        [DataMember]
+        public string StampTax { get; set; }
+        [DataMember]
+        public string AutoVat { get; set; }
 
+        [DataMember]
+        public List<AsientoDetalle> lineas { get; set; }
+        #endregion
+
+        #region Constructor
         public Asiento()
         {
-            this.ProfitCode = string.Empty;
-            this.Proyect = string.Empty;
             this.Memo = string.Empty;
-            this.codigoTransaccion = string.Empty;
+            this.Ref1 = string.Empty;
+            this.Ref2 = string.Empty;
+            this.TransCode = string.Empty;
+            this.Project = string.Empty;
+            this.StampTax = string.Empty;
+            this.AutoVat = string.Empty;
+
             lineas = new List<AsientoDetalle>();
         }
+        #endregion
     }
 }

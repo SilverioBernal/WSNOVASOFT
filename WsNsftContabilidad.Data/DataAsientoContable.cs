@@ -13,13 +13,18 @@ using Microsoft.Practices.EnterpriseLibrary.Data;
 
 namespace WsNsftContabilidad.Data
 {
+    /// <summary>
+    /// Clase para la gestion de asientos contables en SAP
+    /// </summary>
     public class DataAsientoContable
     {
+        #region Propiedades
         /// <summary>
         /// Objeto que proporciona actividades de conexion a Base de Datos.
-        /// </summary>
-        //private  ConexionBD conexionBD;
-        private Database baseDatos;
+        /// </summary>        
+        private Database baseDatos; 
+        #endregion
+
         #region Constructor
         /// <summary>
         /// contructor de la clase
@@ -31,47 +36,47 @@ namespace WsNsftContabilidad.Data
         }        
         #endregion contructor
 
+        #region Métodos
         /// <summary>
-        /// metodo que realiza la creación de los asientos
+        /// metodo que realiza la creación de asientos contables
         /// </summary>
-        /// <param name="unDocumento"></param>
-        /// <param name="unDocumentoLineas"></param>
-        /// <param name="unTipoDocumento"></param>
-        /// <returns></returns>
+        /// <param name="unAsiento">Objeto de tipo asiento contable</param>
+        /// <returns>Numero de aiento contable</returns>
         public int CrearAsiento(Asiento unAsiento)
         {
             JournalEntries miAsientoContable;
             int miResultado = -1;
+
             // se crea el encabezado del asiento
             miAsientoContable = (JournalEntries)ConexionSAP.Conexion.compania.GetBusinessObject(BoObjectTypes.oJournalEntries);
-            miAsientoContable.TransactionCode = unAsiento.codigoTransaccion;
+            miAsientoContable.TransactionCode = unAsiento.TransCode;
+
             if (unAsiento.Memo.ToString().Length > 50)
                 miAsientoContable.Memo = unAsiento.Memo.ToString().Substring(0, 49);
             else
                 miAsientoContable.Memo = unAsiento.Memo.ToString();
-            // se recorren las lineas                   
+
+            // Adicion de detalle de asiento 
             foreach (AsientoDetalle linea in unAsiento.lineas)
             {
-                if (linea.ShortName != null)
-                {
-                    miAsientoContable.Lines.ShortName = linea.ShortName;
-                }
-                miAsientoContable.Lines.AccountCode = linea.AccountCode;
+                miAsientoContable.Lines.AccountCode = linea.Account;
                 miAsientoContable.Lines.Debit = linea.Debit;
                 miAsientoContable.Lines.Credit = linea.Credit;
-                miAsientoContable.Reference = linea.Reference3 == null ? "" : linea.Reference3;
-                miAsientoContable.Lines.Reference1 = linea.Reference1 == null ? "" : linea.Reference1;
-                miAsientoContable.Lines.Reference2 = linea.Reference2 == null ? "" : linea.Reference2;
-                miAsientoContable.Lines.AdditionalReference = linea.Reference3 == null ? "" : linea.Reference3;
+                miAsientoContable.Reference = linea.Ref3Line == null ? "" : linea.Ref3Line;
+                miAsientoContable.Lines.Reference1 = linea.Ref1 == null ? "" : linea.Ref1;
+                miAsientoContable.Lines.Reference2 = linea.Ref2 == null ? "" : linea.Ref2;
+                miAsientoContable.Lines.AdditionalReference = linea.Ref3Line == null ? "" : linea.Ref3Line;
+
+
                 miAsientoContable.Lines.Add();
             }
-            //se agrega el asiento contable
+            //Creacion del asiento contable
             miResultado = miAsientoContable.Add();
             if (miResultado != 0)
                 throw new SAPException(miResultado, ConexionSAP.Conexion.compania.GetLastErrorDescription());
             else
                 return Convert.ToInt32(ConexionSAP.Conexion.compania.GetNewObjectKey());
-        }
-
+        } 
+        #endregion
     }
 }

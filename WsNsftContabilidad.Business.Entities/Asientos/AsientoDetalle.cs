@@ -8,50 +8,63 @@ using WsNsftContabilidad.Business.Entities.SociosNegocio;
 
 namespace WsNsftContabilidad.Business.Entities.Asientos
 {
+    /// <summary>
+    /// Entidad para la gestion de detalle de asientos contables
+    /// </summary>
     [DataContract(Namespace = "http://WsNsftContabilidad")]
     public class AsientoDetalle
     {
+        #region Atributos
         [DataMember]
-        public int transIDDetalle { get; set; }
-        [DataMember]
-        public int Line_IDDetalle { get; set; }
-        [DataMember]
-        public string AccountCode { get; set; }
+        public string Account { get; set; }
         [DataMember]
         public double Debit { get; set; }
         [DataMember]
         public double Credit { get; set; }
         [DataMember]
-        public string Reference1 { get; set; }
+        public DateTime DuoDate { get; set; }
         [DataMember]
-        public string Reference2 { get; set; }
+        public string LineMemo { get; set; }
         [DataMember]
-        public string Reference3 { get; set; }
+        public DateTime RefDate { get; set; }
         [DataMember]
-        public string ProjectCode { get; set; }
+        public string Ref1 { get; set; }
         [DataMember]
-        public string ShortName { get; set; }
+        public string Ref2 { get; set; }
         [DataMember]
-        public string CodigoRetencion { get; set; }
+        public string Ref3Line { get; set; }
         [DataMember]
-        public double BaseRetencion { get; set; }
+        public string Project { get; set; }
         [DataMember]
-        public double PorcentaRetenciones { get; set; }
-        [DataMember]        
-        public SocioNegocio socioNegocio { get; set; }
+        public DateTime TaxDate { get; set; }
+        [DataMember]
+        public string ProfitCode { get; set; }
+        [DataMember]
+        public string OcrCode2 { get; set; }
+        [DataMember]
+        public string OcrCode3 { get; set; }
+        [DataMember]
+        public string U_InfoCo01 { get; set; }
+        [DataMember]
+        public SocioNegocio socioNegocio { get; set; } 
+        #endregion
 
-        
+        #region Constructor
         public AsientoDetalle()
         {
-            
-            this.ShortName = string.Empty;
-            this.AccountCode = string.Empty;
-            this.Reference1 = string.Empty;
-            this.Reference2 = string.Empty;
-            this.Reference3 = string.Empty;
-            this.ProjectCode = string.Empty;
-            this.CodigoRetencion = string.Empty;
+            this.Account = string.Empty;
+            this.LineMemo = string.Empty;
+
+            this.Ref1 = string.Empty;
+            this.Ref2 = string.Empty;
+            this.Ref3Line = string.Empty;
+            this.Project = string.Empty;
+            this.ProfitCode = string.Empty;
+            this.OcrCode2 = string.Empty;
+            this.OcrCode3 = string.Empty;
+            this.U_InfoCo01 = string.Empty;
             socioNegocio = new SocioNegocio();
-        }
+        } 
+        #endregion
     }
 }

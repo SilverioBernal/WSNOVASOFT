@@ -18,17 +18,18 @@ namespace WsNsftContabilidad.Data
     static readonly object padlock = new object();
     static readonly object padlock2 = new object();
 
+    #region Métodos
     /// <summary>
     /// Contiene la conexion a SAP Business One
     /// </summary>
     public ConexionSAP conexion;
-    
+
     /// <summary>
     /// Constructor
     /// </summary>
     public DataConexionSAP()
     {
-      conexion = ConexionSAP.Conexion;
+        conexion = ConexionSAP.Conexion;
     }
 
     /// <summary>
@@ -37,12 +38,12 @@ namespace WsNsftContabilidad.Data
     /// <returns>Estado de la operación</returns>
     public bool IniciarTransaccion()
     {
-      lock (padlock)
-      {
-        while (conexion.compania.InTransaction) { }
-        conexion.compania.StartTransaction();
-      }
-      return true;
+        lock (padlock)
+        {
+            while (conexion.compania.InTransaction) { }
+            conexion.compania.StartTransaction();
+        }
+        return true;
     }
 
     /// <summary>
@@ -51,10 +52,10 @@ namespace WsNsftContabilidad.Data
     /// <returns>Bool, Indica el exito de la tarea de liberar la compañia</returns>
     public bool LiberarCompania()
     {
-      //System.Runtime.InteropServices.Marshal.ReleaseComObject(conexion.compania);
-      conexion = null;
-      ConexionSAP.Conexion = null;
-      return true;
+        //System.Runtime.InteropServices.Marshal.ReleaseComObject(conexion.compania);
+        conexion = null;
+        ConexionSAP.Conexion = null;
+        return true;
     }
 
     /// <summary>
@@ -63,8 +64,8 @@ namespace WsNsftContabilidad.Data
     /// <returns>Bool, Indica el exito de la tarea de desconectar</returns>
     public bool Desconectar()
     {
-      conexion.compania.Disconnect();
-      return true;
+        conexion.compania.Disconnect();
+        return true;
     }
 
     /// <summary>
@@ -73,17 +74,17 @@ namespace WsNsftContabilidad.Data
     /// <returns>Estado de la operación</returns>
     public bool Conectar()
     {
-      long nResult = 0;
-      lock (padlock2)
-      {
-        if (!conexion.compania.Connected)
-          nResult = conexion.compania.Connect();
-      }
-      if (nResult != 0)
-      {
-        throw new SAPException(conexion.compania.GetLastErrorCode(), conexion.compania.GetLastErrorDescription());
-      }
-      return true;
+        long nResult = 0;
+        lock (padlock2)
+        {
+            if (!conexion.compania.Connected)
+                nResult = conexion.compania.Connect();
+        }
+        if (nResult != 0)
+        {
+            throw new SAPException(conexion.compania.GetLastErrorCode(), conexion.compania.GetLastErrorDescription());
+        }
+        return true;
     }
 
     /// <summary>
@@ -96,18 +97,18 @@ namespace WsNsftContabilidad.Data
     ///         False|Fallo en la conexión</returns>
     public bool Conectar(string unaDataBase, string unUserSAP, string unPasswordSAP)
     {
-      long nResult = 0;
-      conexion.compania.CompanyDB = unaDataBase;
-      conexion.compania.UserName = unUserSAP;
-      conexion.compania.Password = unPasswordSAP;
+        long nResult = 0;
+        conexion.compania.CompanyDB = unaDataBase;
+        conexion.compania.UserName = unUserSAP;
+        conexion.compania.Password = unPasswordSAP;
 
-      if (!conexion.compania.Connected)
-        nResult = conexion.compania.Connect();
-      if (nResult != 0)
-      {
-        throw new SAPException(conexion.compania.GetLastErrorCode(), conexion.compania.GetLastErrorDescription());
-      }
-      return true;
+        if (!conexion.compania.Connected)
+            nResult = conexion.compania.Connect();
+        if (nResult != 0)
+        {
+            throw new SAPException(conexion.compania.GetLastErrorCode(), conexion.compania.GetLastErrorDescription());
+        }
+        return true;
     }
 
     /// <summary>
@@ -117,10 +118,11 @@ namespace WsNsftContabilidad.Data
     /// <returns>Estado de la operación</returns>
     public bool TerminarTransaccion(BoWfTransOpt opcionTransaccion)
     {
-      if (conexion.compania.Connected)
-        if (conexion.compania.InTransaction)
-          conexion.compania.EndTransaction(opcionTransaccion);
-      return true;
-    }
+        if (conexion.compania.Connected)
+            if (conexion.compania.InTransaction)
+                conexion.compania.EndTransaction(opcionTransaccion);
+        return true;
+    } 
+    #endregion
   }
 }

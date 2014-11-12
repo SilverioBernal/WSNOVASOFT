@@ -17,7 +17,6 @@ namespace WsNsftContabilidad.Business
     /// </summary>
     public class BusinessFachade
     {
-
         #region Atributos
         /// <summary>
         /// Enumeración para el tipo de clases de negocio
@@ -48,6 +47,7 @@ namespace WsNsftContabilidad.Business
         }
         #endregion
 
+        #region Métodos
         /// <summary>
         /// Crea un asientos contable en SAP
         /// </summary>
@@ -57,7 +57,7 @@ namespace WsNsftContabilidad.Business
         public int CrearAsiento(Asiento asientoContable, ConexionWS conexion)
         {
             return (asientos.CrearAsiento(asientoContable, conexion));
-        }
-
+        } 
+        #endregion
     }
 }

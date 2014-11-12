@@ -24,6 +24,7 @@ namespace WsNsftContabilidad.Services.Core
         private BusinessFachade fachada;
         #endregion
 
+        #region Métodos
         public int CrearAsientoContable(Asiento asiento, ConexionWS conexion)
         {
             try
@@ -51,6 +52,7 @@ namespace WsNsftContabilidad.Services.Core
                 throw new FaultException<DataAccessFault>(detalleError, "Error al Procesar la solicitud");
             }
 
-        }
+        } 
+        #endregion
     }
 }
