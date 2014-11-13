@@ -62,12 +62,13 @@ namespace WsNsftContabilidad.Data
                 miAsientoContable.Lines.AccountCode = linea.Account;
                 miAsientoContable.Lines.Debit = linea.Debit;
                 miAsientoContable.Lines.Credit = linea.Credit;
-                miAsientoContable.Reference = linea.Ref3Line == null ? "" : linea.Ref3Line;
+                miAsientoContable.Reference = unAsiento.Ref1;
                 miAsientoContable.Lines.Reference1 = linea.Ref1 == null ? "" : linea.Ref1;
                 miAsientoContable.Lines.Reference2 = linea.Ref2 == null ? "" : linea.Ref2;
                 miAsientoContable.Lines.AdditionalReference = linea.Ref3Line == null ? "" : linea.Ref3Line;
 
-
+                //UDF Values
+                miAsientoContable.Lines.UserFields.Fields.Item("U_InfoCo01").Value = linea.U_InfoCo01;
                 miAsientoContable.Lines.Add();
             }
             //Creacion del asiento contable
