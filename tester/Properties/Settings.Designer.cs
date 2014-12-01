@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ClienteDelServicio.Properties
+namespace tester.Properties
 {
 
 

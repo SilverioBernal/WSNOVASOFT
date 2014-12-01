@@ -48,8 +48,8 @@ namespace WsNsftContabilidad.Data
         {
             StringBuilder miSentencia = new StringBuilder("SELECT  CardCode,CardName, LicTradNum,Phone1, Phone2,Cellular, Fax,E_Mail  ");
             miSentencia.Append("FROM OCRD T0 ");
-            miSentencia.Append("WHERE T0.CardCode = @CardCode ");
-            miSentencia.Append("AND CardType= 'C' ");
+            miSentencia.Append("WHERE T0.LicTradNum = @CardCode ");
+            miSentencia.Append("AND CardType= 'C' "); 
             DbCommand miComando = this.baseDatos.GetSqlStringCommand(miSentencia.ToString());
             this.baseDatos.AddInParameter(miComando, "CardCode", DbType.String, codigo);
             SocioNegocio socio = new SocioNegocio();
@@ -83,8 +83,93 @@ namespace WsNsftContabilidad.Data
 
             bp.CardCode = socio.CardCode;
             bp.CardType = BoCardTypes.cCustomer;
-            bp.FederalTaxID = socio.CardCode;
+            bp.FederalTaxID = socio.LicTradNum;
             bp.CardName = socio.CardName;
+
+            if (!string.IsNullOrEmpty(socio.DebPayAcct))
+                bp.DebitorAccount = socio.DebPayAcct;
+
+            if (socio.Territory != null)
+                bp.Territory = (int)socio.Territory;
+
+
+            if (socio.AccCritria != null)
+            {
+                bp.AccrualCriteria = BoYesNoEnum.tNO;
+
+                if (socio.AccCritria == "Yes")
+                    bp.AccrualCriteria = BoYesNoEnum.tYES;
+            }
+
+
+            if (!string.IsNullOrEmpty(socio.BlockDunn))
+            {
+                bp.BlockDunning = BoYesNoEnum.tNO;
+
+                if (socio.BlockDunn == "Yes")
+                    bp.BlockDunning = BoYesNoEnum.tYES;
+            }
+
+            if (!string.IsNullOrEmpty(socio.CardName))
+                bp.CardName = socio.CardName;
+
+            if (!string.IsNullOrEmpty(socio.CardFName))
+                bp.CardForeignName = socio.CardFName;
+
+            //if (!string.IsNullOrEmpty(socio.CardType))
+            //    bp.CardType  = SAPbobsCOM.BoCardTypes.cCustomer; ooooooooojo
+
+            if (!string.IsNullOrEmpty(socio.Cellular))
+                bp.Cellular = socio.Cellular;
+
+            if (!string.IsNullOrEmpty(socio.CollecAuth))
+            {
+                bp.CollectionAuthorization = BoYesNoEnum.tNO;
+
+                if (socio.CollecAuth == "Yes")
+                    bp.CollectionAuthorization = BoYesNoEnum.tYES;
+            }
+
+            if (socio.CreditLine != null)
+                bp.CreditLimit = socio.CreditLine;
+
+            if (!string.IsNullOrEmpty(socio.Currency))
+                bp.Currency = socio.Currency;
+
+
+            if (!string.IsNullOrEmpty(socio.DeferrTax))
+            {
+                bp.DeferredTax = BoYesNoEnum.tNO;
+
+                if (socio.DeferrTax == "Yes")
+                    bp.DeferredTax = BoYesNoEnum.tYES;
+            }
+
+            if (!string.IsNullOrEmpty(socio.E_Mail))
+                bp.EmailAddress = socio.E_Mail;
+
+            if (!string.IsNullOrEmpty(socio.Equ))
+            {
+                bp.Equalization = BoYesNoEnum.tNO;
+
+                if (socio.Equ == "Yes")
+                    bp.Equalization = BoYesNoEnum.tYES;
+            }
+
+            if (!string.IsNullOrEmpty(socio.Fax))
+                bp.Fax = socio.Fax;
+
+            if (!string.IsNullOrEmpty(socio.LicTradNum))
+                bp.FederalTaxID = socio.LicTradNum;
+
+
+            if (!string.IsNullOrEmpty(socio.Phone1))
+                bp.Phone1 = socio.Phone1;
+
+
+            if (!string.IsNullOrEmpty(socio.Phone2))
+                bp.Phone2 = socio.Phone2;
+
 
             if (bp.Add() != 0)
                 throw new SAPException(ConexionSAP.Conexion.compania.GetLastErrorCode(), ConexionSAP.Conexion.compania.GetLastErrorDescription());

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ClienteDelServicio.Contable_srv {
+namespace tester.Contable_srv {
     using System.Runtime.Serialization;
     using System;
     
@@ -53,7 +53,7 @@ namespace ClienteDelServicio.Contable_srv {
         private System.DateTime VatDateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<ClienteDelServicio.Contable_srv.AsientoDetalle> lineasField;
+        private System.Collections.Generic.List<tester.Contable_srv.AsientoDetalle> lineasField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -196,7 +196,7 @@ namespace ClienteDelServicio.Contable_srv {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<ClienteDelServicio.Contable_srv.AsientoDetalle> lineas {
+        public System.Collections.Generic.List<tester.Contable_srv.AsientoDetalle> lineas {
             get {
                 return this.lineasField;
             }
@@ -273,7 +273,7 @@ namespace ClienteDelServicio.Contable_srv {
         private string U_InfoCo01Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ClienteDelServicio.Contable_srv.SocioNegocio socioNegocioField;
+        private tester.Contable_srv.SocioNegocio socioNegocioField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -481,7 +481,7 @@ namespace ClienteDelServicio.Contable_srv {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public ClienteDelServicio.Contable_srv.SocioNegocio socioNegocio {
+        public tester.Contable_srv.SocioNegocio socioNegocio {
             get {
                 return this.socioNegocioField;
             }
@@ -513,16 +513,46 @@ namespace ClienteDelServicio.Contable_srv {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AccCritriaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string BlockDunnField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CardCodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CardFNameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CardNameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CardTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CellularField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CollecAuthField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double CreditLineField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CurrencyField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DebPayAcctField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DeferrTaxField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string E_MailField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EquField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string FaxField;
@@ -536,6 +566,9 @@ namespace ClienteDelServicio.Contable_srv {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string Phone2Field;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> TerritoryField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -543,6 +576,32 @@ namespace ClienteDelServicio.Contable_srv {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string AccCritria {
+            get {
+                return this.AccCritriaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AccCritriaField, value) != true)) {
+                    this.AccCritriaField = value;
+                    this.RaisePropertyChanged("AccCritria");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string BlockDunn {
+            get {
+                return this.BlockDunnField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.BlockDunnField, value) != true)) {
+                    this.BlockDunnField = value;
+                    this.RaisePropertyChanged("BlockDunn");
+                }
             }
         }
         
@@ -555,6 +614,19 @@ namespace ClienteDelServicio.Contable_srv {
                 if ((object.ReferenceEquals(this.CardCodeField, value) != true)) {
                     this.CardCodeField = value;
                     this.RaisePropertyChanged("CardCode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CardFName {
+            get {
+                return this.CardFNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CardFNameField, value) != true)) {
+                    this.CardFNameField = value;
+                    this.RaisePropertyChanged("CardFName");
                 }
             }
         }
@@ -573,6 +645,19 @@ namespace ClienteDelServicio.Contable_srv {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CardType {
+            get {
+                return this.CardTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CardTypeField, value) != true)) {
+                    this.CardTypeField = value;
+                    this.RaisePropertyChanged("CardType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string Cellular {
             get {
                 return this.CellularField;
@@ -586,6 +671,71 @@ namespace ClienteDelServicio.Contable_srv {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CollecAuth {
+            get {
+                return this.CollecAuthField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CollecAuthField, value) != true)) {
+                    this.CollecAuthField = value;
+                    this.RaisePropertyChanged("CollecAuth");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double CreditLine {
+            get {
+                return this.CreditLineField;
+            }
+            set {
+                if ((this.CreditLineField.Equals(value) != true)) {
+                    this.CreditLineField = value;
+                    this.RaisePropertyChanged("CreditLine");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Currency {
+            get {
+                return this.CurrencyField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CurrencyField, value) != true)) {
+                    this.CurrencyField = value;
+                    this.RaisePropertyChanged("Currency");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DebPayAcct {
+            get {
+                return this.DebPayAcctField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DebPayAcctField, value) != true)) {
+                    this.DebPayAcctField = value;
+                    this.RaisePropertyChanged("DebPayAcct");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DeferrTax {
+            get {
+                return this.DeferrTaxField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DeferrTaxField, value) != true)) {
+                    this.DeferrTaxField = value;
+                    this.RaisePropertyChanged("DeferrTax");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string E_Mail {
             get {
                 return this.E_MailField;
@@ -594,6 +744,19 @@ namespace ClienteDelServicio.Contable_srv {
                 if ((object.ReferenceEquals(this.E_MailField, value) != true)) {
                     this.E_MailField = value;
                     this.RaisePropertyChanged("E_Mail");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Equ {
+            get {
+                return this.EquField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EquField, value) != true)) {
+                    this.EquField = value;
+                    this.RaisePropertyChanged("Equ");
                 }
             }
         }
@@ -646,6 +809,19 @@ namespace ClienteDelServicio.Contable_srv {
                 if ((object.ReferenceEquals(this.Phone2Field, value) != true)) {
                     this.Phone2Field = value;
                     this.RaisePropertyChanged("Phone2");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> Territory {
+            get {
+                return this.TerritoryField;
+            }
+            set {
+                if ((this.TerritoryField.Equals(value) != true)) {
+                    this.TerritoryField = value;
+                    this.RaisePropertyChanged("Territory");
                 }
             }
         }
@@ -816,21 +992,21 @@ namespace ClienteDelServicio.Contable_srv {
     public interface WsNsftContabilidad {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://WsNsftContabilidad/WsNsftContabilidad/CrearAsientoContable", ReplyAction="http://WsNsftContabilidad/WsNsftContabilidad/CrearAsientoContableResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(ClienteDelServicio.Contable_srv.DataAccessFault), Action="http://WsNsftContabilidad/WsNsftContabilidad/CrearAsientoContableDataAccessFaultF" +
+        [System.ServiceModel.FaultContractAttribute(typeof(tester.Contable_srv.DataAccessFault), Action="http://WsNsftContabilidad/WsNsftContabilidad/CrearAsientoContableDataAccessFaultF" +
             "ault", Name="DataAccessFault")]
-        int CrearAsientoContable(ClienteDelServicio.Contable_srv.Asiento asiento, ClienteDelServicio.Contable_srv.ConexionWS conexion);
+        int CrearAsientoContable(tester.Contable_srv.Asiento asiento, tester.Contable_srv.ConexionWS conexion);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://WsNsftContabilidad/WsNsftContabilidad/CrearAsientoContable", ReplyAction="http://WsNsftContabilidad/WsNsftContabilidad/CrearAsientoContableResponse")]
-        System.Threading.Tasks.Task<int> CrearAsientoContableAsync(ClienteDelServicio.Contable_srv.Asiento asiento, ClienteDelServicio.Contable_srv.ConexionWS conexion);
+        System.Threading.Tasks.Task<int> CrearAsientoContableAsync(tester.Contable_srv.Asiento asiento, tester.Contable_srv.ConexionWS conexion);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface WsNsftContabilidadChannel : ClienteDelServicio.Contable_srv.WsNsftContabilidad, System.ServiceModel.IClientChannel {
+    public interface WsNsftContabilidadChannel : tester.Contable_srv.WsNsftContabilidad, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class WsNsftContabilidadClient : System.ServiceModel.ClientBase<ClienteDelServicio.Contable_srv.WsNsftContabilidad>, ClienteDelServicio.Contable_srv.WsNsftContabilidad {
+    public partial class WsNsftContabilidadClient : System.ServiceModel.ClientBase<tester.Contable_srv.WsNsftContabilidad>, tester.Contable_srv.WsNsftContabilidad {
         
         public WsNsftContabilidadClient() {
         }
@@ -851,11 +1027,11 @@ namespace ClienteDelServicio.Contable_srv {
                 base(binding, remoteAddress) {
         }
         
-        public int CrearAsientoContable(ClienteDelServicio.Contable_srv.Asiento asiento, ClienteDelServicio.Contable_srv.ConexionWS conexion) {
+        public int CrearAsientoContable(tester.Contable_srv.Asiento asiento, tester.Contable_srv.ConexionWS conexion) {
             return base.Channel.CrearAsientoContable(asiento, conexion);
         }
         
-        public System.Threading.Tasks.Task<int> CrearAsientoContableAsync(ClienteDelServicio.Contable_srv.Asiento asiento, ClienteDelServicio.Contable_srv.ConexionWS conexion) {
+        public System.Threading.Tasks.Task<int> CrearAsientoContableAsync(tester.Contable_srv.Asiento asiento, tester.Contable_srv.ConexionWS conexion) {
             return base.Channel.CrearAsientoContableAsync(asiento, conexion);
         }
     }

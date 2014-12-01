@@ -45,15 +45,15 @@ namespace WsNsftContabilidad.Business
         {
             try
             {
-                if (!Util.ValidarDatosAccesoServicio(conexion))
-                    throw new BusinessException(15, "Nombre de Usuario o Contraseña incorrecta para el Servicio");
+                //if (!Util.ValidarDatosAccesoServicio(conexion))
+                //    throw new BusinessException(15, "Nombre de Usuario o Contraseña incorrecta para el Servicio");
 
                 accesoSocio = new DataSocio();
 
                 SocioNegocio socio = accesoSocio.ConsultarSocio(codigoSocio);
 
-                if (socio.CardCode.Length == 0)
-                    throw new BusinessException(42, "El valor enviado: " + codigoSocio + "no esta registrado como un cliente en SAP Business One");
+                //if (socio.CardCode.Length == 0)
+                //    throw new BusinessException(42, "El valor enviado: " + codigoSocio + "no esta registrado como un cliente en SAP Business One");
                 return socio;
             }
             catch (DbException ex)

@@ -53,14 +53,25 @@
   <xs:element name="AsientoDetalle" nillable="true" type="tns:AsientoDetalle" />
   <xs:complexType name="SocioNegocio">
     <xs:sequence>
+      <xs:element minOccurs="0" name="AccCritria" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BlockDunn" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CardCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CardFName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CardName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CardType" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Cellular" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CollecAuth" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreditLine" type="xs:double" />
+      <xs:element minOccurs="0" name="Currency" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DebPayAcct" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeferrTax" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="E_Mail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Equ" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Fax" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="LicTradNum" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Phone1" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Phone2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Territory" nillable="true" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="SocioNegocio" nillable="true" type="tns:SocioNegocio" />

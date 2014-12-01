@@ -1,5 +1,4 @@
-﻿using ClienteDelServicio.Contable_srv;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,12 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using tester.Contable_srv;
 
-namespace ClienteDelServicio
+namespace tester
 {
-    public partial class Form2 : Form
+    public partial class Form1 : Form
     {
-        public Form2()
+        public Form1()
         {
             InitializeComponent();
         }
@@ -27,7 +27,7 @@ namespace ClienteDelServicio
             Asiento asiento = new Asiento()
             {
                 TransCode = "PAGO",
-                Memo = "Hola", 
+                Memo = "Hola",
                 lineas = new List<AsientoDetalle>()
             };
 
@@ -40,8 +40,18 @@ namespace ClienteDelServicio
             AsientoDetalle linea2 = new AsientoDetalle()
             {
                 Account = "19202010",
-                Debit = 1000
+                Debit = 1000,
             };
+
+
+            SocioNegocio bp = new SocioNegocio()
+            {
+                CardCode = "80010009",
+                CardName = "un socio mas",
+                LicTradNum = "80010009"
+            };
+
+            linea2.socioNegocio = bp;
 
             asiento.lineas.Add(linea1);
             asiento.lineas.Add(linea2);

@@ -45,25 +45,26 @@ namespace WsNsftContabilidad.Business
             {
                 #region Contenido del Asiento
                 try
-                {
-                    sapData.IniciarTransaccion();
-
+                {                 
                     if (asientoContable.lineas.Count > 0)
                     {
                         foreach (AsientoDetalle item in asientoContable.lineas)
                         {
                             if (item.socioNegocio != null)
                             {
-                                SocioNegocio socio = socioData.ConsultarSocio(item.socioNegocio.CardCode, conexion);
+                                BusinessSocioNegocio bizSocios = new BusinessSocioNegocio();
+                                SocioNegocio socio = bizSocios.ConsultarSocio(item.socioNegocio.LicTradNum, conexion);
 
-                                if (socio == null)
-                                    socioData.CrearSocio(item.socioNegocio, conexion);
+                                if (string.IsNullOrEmpty(socio.CardCode))
+                                {
+                                    bizSocios.CrearSocio(item.socioNegocio, conexion);
+                                }
                             }
                         }
-
+                        sapData.IniciarTransaccion();
                         numeroAsiento = asientosData.CrearAsiento(asientoContable);
+                        sapData.TerminarTransaccion(SAPbobsCOM.BoWfTransOpt.wf_Commit);
                     }
-                    sapData.TerminarTransaccion(SAPbobsCOM.BoWfTransOpt.wf_Commit);
                     return numeroAsiento;
                 }
                 catch (SAPException ex)
