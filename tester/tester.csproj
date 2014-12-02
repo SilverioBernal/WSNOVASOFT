@@ -80,26 +80,25 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Service References\Contable_srv\WsNsftContabilidad.wsdl" />
-    <None Include="Service References\Contable_srv\WsNsftContabilidad.xsd">
+    <None Include="Service References\Contable_srv\WsNsftContabilidad2.wsdl" />
+    <None Include="Service References\Contable_srv\WsNsftContabilidad2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Contable_srv\WsNsftContabilidad1.wsdl" />
-    <None Include="Service References\Contable_srv\WsNsftContabilidad1.xsd">
+    <None Include="Service References\Contable_srv\WsNsftContabilidad21.wsdl" />
+    <None Include="Service References\Contable_srv\WsNsftContabilidad21.xsd">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\Contable_srv\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\Contable_srv\WsNsftContabilidad.disco" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\Contable_srv\configuration91.svcinfo" />
@@ -112,6 +111,9 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Contable_srv\WsNsftContabilidad1.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -21,14 +21,14 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:49734/WsNsftContabilidad.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://sapserver/wsnovasoft/WsNsftContabilidad.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="WsNsftContabilidad.wsdl" MetadataType="Wsdl" ID="6eb350e8-a5f3-4015-ac8d-cb3825b3511a" SourceId="1" SourceUrl="http://localhost:49734/WsNsftContabilidad.svc?wsdl" />
-    <MetadataFile FileName="WsNsftContabilidad.disco" MetadataType="Disco" ID="f08b5373-6b9f-4bb1-8990-1fb1090be612" SourceId="1" SourceUrl="http://localhost:49734/WsNsftContabilidad.svc?disco" />
-    <MetadataFile FileName="WsNsftContabilidad.xsd" MetadataType="Schema" ID="9b893f43-2eee-4d7a-9f93-9f6e2f7664c0" SourceId="1" SourceUrl="http://localhost:49734/WsNsftContabilidad.svc?xsd=xsd1" />
-    <MetadataFile FileName="WsNsftContabilidad1.wsdl" MetadataType="Wsdl" ID="64568dce-10c0-4aef-851c-039ecadf3b4b" SourceId="1" SourceUrl="http://localhost:49734/WsNsftContabilidad.svc?wsdl=wsdl0" />
-    <MetadataFile FileName="WsNsftContabilidad1.xsd" MetadataType="Schema" ID="a4561695-3b9b-497e-be85-0fb7ff9e8e25" SourceId="1" SourceUrl="http://localhost:49734/WsNsftContabilidad.svc?xsd=xsd0" />
+    <MetadataFile FileName="WsNsftContabilidad2.wsdl" MetadataType="Wsdl" ID="83de75b1-38d2-4d2d-ae48-d1e87016a2b7" SourceId="1" SourceUrl="http://sapserver/wsNovasoft/WsNsftContabilidad.svc?wsdl" />
+    <MetadataFile FileName="WsNsftContabilidad1.disco" MetadataType="Disco" ID="e9350d21-f886-499b-a742-186c54f37c6c" SourceId="1" SourceUrl="http://sapserver/wsNovasoft/WsNsftContabilidad.svc?disco" />
+    <MetadataFile FileName="WsNsftContabilidad21.wsdl" MetadataType="Wsdl" ID="6dcbdb3a-e649-4fb9-bbc9-c44659552eb2" SourceId="1" SourceUrl="http://sapserver/wsNovasoft/WsNsftContabilidad.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="WsNsftContabilidad2.xsd" MetadataType="Schema" ID="0396c6ec-c622-4916-a99a-0e2209113d36" SourceId="1" SourceUrl="http://sapserver/wsNovasoft/WsNsftContabilidad.svc?xsd=xsd0" />
+    <MetadataFile FileName="WsNsftContabilidad21.xsd" MetadataType="Schema" ID="c37ac351-d28b-4b06-8a5a-b98fc2609c5b" SourceId="1" SourceUrl="http://sapserver/wsNovasoft/WsNsftContabilidad.svc?xsd=xsd1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

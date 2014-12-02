@@ -54,6 +54,7 @@
   <xs:complexType name="SocioNegocio">
     <xs:sequence>
       <xs:element minOccurs="0" name="AccCritria" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="BlockDunn" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CardCode" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CardFName" nillable="true" type="xs:string" />

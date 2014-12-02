@@ -46,9 +46,10 @@ namespace tester
 
             SocioNegocio bp = new SocioNegocio()
             {
-                CardCode = "80010009",
+                CardCode = "80010011",
                 CardName = "un socio mas",
-                LicTradNum = "80010009"
+                LicTradNum = "80010011", Cellular = "3165234756",
+                Address="CRA 1 No.23-45"
             };
 
             linea2.socioNegocio = bp;

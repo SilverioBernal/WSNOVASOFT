@@ -33,6 +33,10 @@ namespace WsNsftContabilidad.Business.Entities.SociosNegocio
         public string CardFName { get; set; }
         [DataMember]
         public string CardType { get; set; }
+
+        [DataMember]
+        public string Address { get; set; }
+
         /// <summary>
         /// Teléfono Celular
         /// </summary>

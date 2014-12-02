@@ -516,6 +516,9 @@ namespace tester.Contable_srv {
         private string AccCritriaField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AddressField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string BlockDunnField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -588,6 +591,19 @@ namespace tester.Contable_srv {
                 if ((object.ReferenceEquals(this.AccCritriaField, value) != true)) {
                     this.AccCritriaField = value;
                     this.RaisePropertyChanged("AccCritria");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Address {
+            get {
+                return this.AddressField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AddressField, value) != true)) {
+                    this.AddressField = value;
+                    this.RaisePropertyChanged("Address");
                 }
             }
         }

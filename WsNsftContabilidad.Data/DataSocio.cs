@@ -66,6 +66,8 @@ namespace WsNsftContabilidad.Data
                     socio.Cellular = this.reader.IsDBNull(5) ? "" : this.reader.GetValue(5).ToString();
                     socio.Fax = this.reader.IsDBNull(6) ? "" : this.reader.GetValue(6).ToString();
                     socio.E_Mail = this.reader.IsDBNull(7) ? "" : this.reader.GetValue(7).ToString();
+                    
+                    
                 }
             }
             return socio;
@@ -85,6 +87,9 @@ namespace WsNsftContabilidad.Data
             bp.CardType = BoCardTypes.cCustomer;
             bp.FederalTaxID = socio.LicTradNum;
             bp.CardName = socio.CardName;
+
+            if (!string.IsNullOrEmpty(socio.Address))
+                bp.Address = socio.Address;
 
             if (!string.IsNullOrEmpty(socio.DebPayAcct))
                 bp.DebitorAccount = socio.DebPayAcct;
