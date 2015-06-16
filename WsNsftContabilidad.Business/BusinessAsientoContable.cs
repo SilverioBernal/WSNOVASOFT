@@ -1,5 +1,6 @@
 ﻿using Microsoft.Practices.EnterpriseLibrary.ExceptionHandling;
 using System;
+using System.Data.Common;
 using System.Runtime.InteropServices;
 using WsNsftContabilidad.Business.Entities;
 using WsNsftContabilidad.Business.Entities.Asientos;
@@ -41,32 +42,38 @@ namespace WsNsftContabilidad.Business
             //if (!Util.ValidarDatosAccesoServicio(conexion))
             //    throw new BusinessException(15, "Nombre de Usuario o Contraseña incorrecta para el Servicio");
             int numeroAsiento = -1;
-            if (sapData.Conectar())
-            {
+            //if (sapData.Conectar())
+            //{
                 #region Contenido del Asiento
                 try
-                {                 
-                    if (asientoContable.lineas.Count > 0)
+                {
+                    if (sapData.Conectar())
                     {
-                        foreach (AsientoDetalle item in asientoContable.lineas)
+                        #region try
+                        if (asientoContable.lineas.Count > 0)
                         {
-                            if (item.socioNegocio != null)
+                            foreach (AsientoDetalle item in asientoContable.lineas)
                             {
-                                BusinessSocioNegocio bizSocios = new BusinessSocioNegocio();
-                                SocioNegocio socio = bizSocios.ConsultarSocio(item.socioNegocio.LicTradNum, conexion);
-
-                                if (string.IsNullOrEmpty(socio.CardCode))
+                                if (item.socioNegocio != null)
                                 {
-                                    bizSocios.CrearSocio(item.socioNegocio, conexion);
+                                    BusinessSocioNegocio bizSocios = new BusinessSocioNegocio();
+                                    SocioNegocio socio = bizSocios.ConsultarSocio(item.socioNegocio.LicTradNum, conexion);
+
+                                    if (string.IsNullOrEmpty(socio.CardCode))
+                                    {
+                                        bizSocios.CrearSocio(item.socioNegocio, conexion);
+                                    }
                                 }
                             }
+                            sapData.IniciarTransaccion();
+                            numeroAsiento = asientosData.CrearAsiento(asientoContable);
+                            sapData.TerminarTransaccion(SAPbobsCOM.BoWfTransOpt.wf_Commit);
                         }
-                        sapData.IniciarTransaccion();
-                        numeroAsiento = asientosData.CrearAsiento(asientoContable);
-                        sapData.TerminarTransaccion(SAPbobsCOM.BoWfTransOpt.wf_Commit);
+                        return numeroAsiento;
+                        #endregion
                     }
-                    return numeroAsiento;
                 }
+                #region Catch
                 catch (SAPException ex)
                 {
                     sapData.TerminarTransaccion(SAPbobsCOM.BoWfTransOpt.wf_RollBack);
@@ -90,6 +97,28 @@ namespace WsNsftContabilidad.Business
                     }
                     return numeroAsiento;
                 }
+                catch (DbException ex)
+                {
+                    Exception outEx;
+                    if (ExceptionPolicy.HandleException(ex, "Politica_SQLServer", out outEx))
+                    {
+                        outEx.Data.Add("1", "14");
+                        outEx.Data.Add("2", "NA");
+                        outEx.Data.Add("3", outEx.Message);
+                        throw outEx;
+                    }
+                    else
+                    {
+                        throw ex;
+                    }
+                }
+                catch (BusinessException ex)
+                {
+                    ex.Data.Add("1", ex.IdError);
+                    ex.Data.Add("2", "NA");
+                    ex.Data.Add("3", ex.Mensaje);
+                    throw ex;
+                }
                 catch (Exception ex)
                 {
                     sapData.TerminarTransaccion(SAPbobsCOM.BoWfTransOpt.wf_RollBack);
@@ -108,11 +137,12 @@ namespace WsNsftContabilidad.Business
                         return 0;
                     }
                     return numeroAsiento;
-                }
+                } 
+                #endregion
                 #endregion
                 return numeroAsiento;
-            }
-            return numeroAsiento;
+            //}
+            //return numeroAsiento;
         }
         #endregion
     }

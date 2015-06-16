@@ -80,12 +80,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Service References\Contable_srv\WsNsftContabilidad2.wsdl" />
-    <None Include="Service References\Contable_srv\WsNsftContabilidad2.xsd">
+    <None Include="Service References\Contable_srv\WsNsftContabilidad.wsdl" />
+    <None Include="Service References\Contable_srv\WsNsftContabilidad.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Contable_srv\WsNsftContabilidad21.wsdl" />
-    <None Include="Service References\Contable_srv\WsNsftContabilidad21.xsd">
+    <None Include="Service References\Contable_srv\WsNsftContabilidad1.wsdl" />
+    <None Include="Service References\Contable_srv\WsNsftContabilidad1.xsd">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
@@ -113,7 +113,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\Contable_srv\WsNsftContabilidad1.disco" />
+    <None Include="Service References\Contable_srv\WsNsftContabilidad.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -46,9 +47,10 @@ namespace tester
 
             SocioNegocio bp = new SocioNegocio()
             {
-                CardCode = "80010011",
-                CardName = "un socio mas",
-                LicTradNum = "80010011", Cellular = "3165234756",
+                CardCode = "80171830",
+                CardName = "Andres Bernal",
+                LicTradNum = "80171830",
+                Cellular = "3165234756",
                 Address="CRA 1 No.23-45"
             };
 
@@ -57,8 +59,15 @@ namespace tester
             asiento.lineas.Add(linea1);
             asiento.lineas.Add(linea2);
 
-            int asientoNum = oPago.CrearAsientoContable(asiento, new ConexionWS() { Usuario = "Paquito", Contrasena = "Gallego" });
-            MessageBox.Show(asientoNum.ToString());
+            try
+            {
+                int asientoNum = oPago.CrearAsientoContable(asiento, new ConexionWS() { Usuario = "Paquito", Contrasena = "Gallego" });
+                MessageBox.Show(asientoNum.ToString());
+            }
+            catch (FaultException<DataAccessFault> ex)
+            {
+                MessageBox.Show(string.Format("Codigo {0} error:{1}", ex.Code,ex.Detail.Description));
+            }            
         }
     }
 }
