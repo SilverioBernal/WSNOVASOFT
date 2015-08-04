@@ -66,7 +66,7 @@ namespace tester
             }
             catch (FaultException<DataAccessFault> ex)
             {
-                MessageBox.Show(string.Format("Codigo {0} error:{1}", ex.Code,ex.Detail.Description));
+                MessageBox.Show(string.Format("Codigo {0} error:{1} {2}", ex.Code,ex.Detail.Description, ex.Message));
             }            
         }
     }

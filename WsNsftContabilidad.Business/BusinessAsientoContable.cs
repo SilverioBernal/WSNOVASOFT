@@ -104,7 +104,8 @@ namespace WsNsftContabilidad.Business
                     {
                         outEx.Data.Add("1", "14");
                         outEx.Data.Add("2", "NA");
-                        outEx.Data.Add("3", outEx.Message);
+                        //outEx.Data.Add("3", outEx.Message);
+                        outEx.Data.Add("3", outEx.Message + " Descripción: " + ex.Message);
                         throw outEx;
                     }
                     else
@@ -123,18 +124,21 @@ namespace WsNsftContabilidad.Business
                 {
                     sapData.TerminarTransaccion(SAPbobsCOM.BoWfTransOpt.wf_RollBack);
                     Exception outEx;
-                    if (ExceptionPolicy.HandleException(ex, "Politica_ExcepcionGenerica", out outEx))
+                    if (ex.Data["1"] == null)
                     {
-                        outEx.Data.Add("1", "3");
-                        outEx.Data.Add("2", "NA");
-                        outEx.Data.Add("3", outEx.Message);
-                        throw outEx;
+                        if (ExceptionPolicy.HandleException(ex, "Politica_ExcepcionGenerica", out outEx))
+                        {
+                            outEx.Data.Add("1", "3");
+                            outEx.Data.Add("2", "NA");
+                            outEx.Data.Add("3", outEx.Message);
+                            throw outEx;
 
+                        }
                     }
                     else
                     {
                         throw ex;
-                        return 0;
+                        //return 0;
                     }
                     return numeroAsiento;
                 } 
