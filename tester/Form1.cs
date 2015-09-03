@@ -34,24 +34,25 @@ namespace tester
 
 
             AsientoDetalle linea1 = new AsientoDetalle()
-            {
-                Account = "91050103",
+            {                
+                Account = "19202010",
                 Credit = 1000
             };
             AsientoDetalle linea2 = new AsientoDetalle()
             {
-                Account = "19202010",
+                Account = "92050103",
                 Debit = 1000,
             };
 
 
             SocioNegocio bp = new SocioNegocio()
             {
-                CardCode = "80171830",
+                CardCode = "100085",
                 CardName = "Andres Bernal",
                 LicTradNum = "80171830",
                 Cellular = "3165234756",
-                Address="CRA 1 No.23-45"
+                Address="CRA 1 No.23-45",
+                DebPayAcct = "92050103"
             };
 
             linea2.socioNegocio = bp;

@@ -87,7 +87,11 @@ namespace WsNsftContabilidad.Data
             // Adicion de detalle de asiento 
             foreach (AsientoDetalle linea in unAsiento.lineas)
             {
-                miAsientoContable.Lines.AccountCode = linea.Account;
+                if (linea.U_InfoCo01 != null)                                    
+                    miAsientoContable.Lines.ShortName = linea.U_InfoCo01 == null ? "" : linea.U_InfoCo01;
+                else
+                    miAsientoContable.Lines.AccountCode = linea.Account;
+
                 miAsientoContable.Lines.Debit = linea.Debit;
                 miAsientoContable.Lines.Credit = linea.Credit;
                 miAsientoContable.Reference = unAsiento.Ref1;

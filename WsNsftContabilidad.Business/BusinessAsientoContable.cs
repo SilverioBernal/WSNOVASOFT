@@ -63,8 +63,12 @@ namespace WsNsftContabilidad.Business
                                     {
                                         bizSocios.CrearSocio(item.socioNegocio, conexion);
                                     }
-                                }
+
+                                    item.U_InfoCo01 = item.socioNegocio.CardCode;
+                                    
+                                }                                
                             }
+                            
                             sapData.IniciarTransaccion();
                             numeroAsiento = asientosData.CrearAsiento(asientoContable);
                             sapData.TerminarTransaccion(SAPbobsCOM.BoWfTransOpt.wf_Commit);
