@@ -47,12 +47,13 @@ namespace tester
 
             SocioNegocio bp = new SocioNegocio()
             {
-                CardCode = "100085",
-                CardName = "Andres Bernal",
-                LicTradNum = "80171830",
+                CardCode = "53054396",
+                CardName = "Tatiana Morales",
+                LicTradNum = "53054396",
                 Cellular = "3165234756",
                 Address="CRA 1 No.23-45",
-                DebPayAcct = "92050103"
+                DebPayAcct = "92050103",
+                CustomerCardType = CardType.Cliente
             };
 
             linea2.socioNegocio = bp;

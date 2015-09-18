@@ -73,6 +73,7 @@
     <Compile Include="Seguridad\ConexionSAP.cs" />
     <Compile Include="Seguridad\ConexionWS.cs" />
     <Compile Include="Seguridad\DataAccessFault.cs" />
+    <Compile Include="SociosNegocio\CardType.cs" />
     <Compile Include="SociosNegocio\SocioNegocio.cs" />
   </ItemGroup>
   <ItemGroup />

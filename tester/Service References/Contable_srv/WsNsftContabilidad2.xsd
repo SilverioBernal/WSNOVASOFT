@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WsNsftContabilidad.Business.Entities.SociosNegocio" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WsNsftContabilidad.Business.Entities.SociosNegocio" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="CardType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Cliente" />
+      <xs:enumeration value="Proveedor" />
+      <xs:enumeration value="Lead" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CardType" nillable="true" type="tns:CardType" />
+</xs:schema>

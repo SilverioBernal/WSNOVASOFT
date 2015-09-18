@@ -531,9 +531,6 @@ namespace tester.Contable_srv {
         private string CardNameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CardTypeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CellularField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -544,6 +541,9 @@ namespace tester.Contable_srv {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CurrencyField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private tester.Contable_srv.CardType CustomerCardTypeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string DebPayAcctField;
@@ -661,19 +661,6 @@ namespace tester.Contable_srv {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CardType {
-            get {
-                return this.CardTypeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CardTypeField, value) != true)) {
-                    this.CardTypeField = value;
-                    this.RaisePropertyChanged("CardType");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
         public string Cellular {
             get {
                 return this.CellularField;
@@ -721,6 +708,19 @@ namespace tester.Contable_srv {
                 if ((object.ReferenceEquals(this.CurrencyField, value) != true)) {
                     this.CurrencyField = value;
                     this.RaisePropertyChanged("Currency");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public tester.Contable_srv.CardType CustomerCardType {
+            get {
+                return this.CustomerCardTypeField;
+            }
+            set {
+                if ((this.CustomerCardTypeField.Equals(value) != true)) {
+                    this.CustomerCardTypeField = value;
+                    this.RaisePropertyChanged("CustomerCardType");
                 }
             }
         }
@@ -850,6 +850,21 @@ namespace tester.Contable_srv {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CardType", Namespace="http://schemas.datacontract.org/2004/07/WsNsftContabilidad.Business.Entities.Soci" +
+        "osNegocio")]
+    public enum CardType : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Cliente = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Proveedor = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Lead = 2,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]

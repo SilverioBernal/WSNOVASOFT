@@ -4,6 +4,7 @@
     <xsd:schema targetNamespace="http://WsNsftContabilidad/Imports">
       <xsd:import schemaLocation="http://localhost:49734/WsNsftContabilidad.svc?xsd=xsd0" namespace="http://WsNsftContabilidad" />
       <xsd:import schemaLocation="http://localhost:49734/WsNsftContabilidad.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:49734/WsNsftContabilidad.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WsNsftContabilidad.Business.Entities.SociosNegocio" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="WsNsftContabilidad_CrearAsientoContable_InputMessage">

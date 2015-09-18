@@ -84,7 +84,23 @@ namespace WsNsftContabilidad.Data
             bp = (BusinessPartners)ConexionSAP.Conexion.compania.GetBusinessObject(BoObjectTypes.oBusinessPartners);
 
             bp.CardCode = socio.CardCode;
-            bp.CardType = BoCardTypes.cCustomer;
+
+            switch (socio.CustomerCardType)
+            {
+                case CardType.Cliente:
+                    bp.CardType = BoCardTypes.cCustomer;
+                    break;
+                case CardType.Proveedor:
+                    bp.CardType = BoCardTypes.cSupplier;
+                    break;
+                case CardType.Lead:
+                    bp.CardType = BoCardTypes.cLid;
+                    break;
+                default:
+                    break;
+            }
+
+            
             bp.FederalTaxID = socio.LicTradNum;
             bp.CardName = socio.CardName;
 

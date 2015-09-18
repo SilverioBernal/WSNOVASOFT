@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://WsNsftContabilidad" elementFormDefault="qualified" targetNamespace="http://WsNsftContabilidad" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:49734/WsNsftContabilidad.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WsNsftContabilidad.Business.Entities.SociosNegocio" />
   <xs:element name="CrearAsientoContable">
     <xs:complexType>
       <xs:sequence>
@@ -59,11 +60,11 @@
       <xs:element minOccurs="0" name="CardCode" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CardFName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CardName" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="CardType" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Cellular" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CollecAuth" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CreditLine" type="xs:double" />
       <xs:element minOccurs="0" name="Currency" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/WsNsftContabilidad.Business.Entities.SociosNegocio" minOccurs="0" name="CustomerCardType" type="q1:CardType" />
       <xs:element minOccurs="0" name="DebPayAcct" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="DeferrTax" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="E_Mail" nillable="true" type="xs:string" />

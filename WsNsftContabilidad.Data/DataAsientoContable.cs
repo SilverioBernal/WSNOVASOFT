@@ -22,7 +22,9 @@ namespace WsNsftContabilidad.Data
         /// <summary>
         /// Objeto que proporciona actividades de conexion a Base de Datos.
         /// </summary>        
-        private Database baseDatos; 
+        private Database baseDatos;
+
+        private IDataReader reader;
         #endregion
 
         #region Constructor
@@ -87,10 +89,25 @@ namespace WsNsftContabilidad.Data
             // Adicion de detalle de asiento 
             foreach (AsientoDetalle linea in unAsiento.lineas)
             {
-                if (linea.U_InfoCo01 != null)                                    
-                    miAsientoContable.Lines.ShortName = linea.U_InfoCo01 == null ? "" : linea.U_InfoCo01;
+                if (CuentaAsociada(linea.Account))
+                {
+                    if (!string.IsNullOrEmpty(linea.socioNegocio.CardCode))
+                        miAsientoContable.Lines.ShortName = linea.socioNegocio.CardCode;
+                    else
+                        miAsientoContable.Lines.ShortName = linea.U_InfoCo01 == null ? "" : linea.U_InfoCo01;
+                }
                 else
+                {
+                    if (CuentaReqTercero(linea.Account))
+                    {
+                        if (!string.IsNullOrEmpty(linea.socioNegocio.CardCode))
+                            miAsientoContable.Lines.ShortName = linea.socioNegocio.CardCode;
+                        else
+                            miAsientoContable.Lines.ShortName = linea.U_InfoCo01 == null ? "" : linea.U_InfoCo01;
+                    }
+
                     miAsientoContable.Lines.AccountCode = linea.Account;
+                }
 
                 miAsientoContable.Lines.Debit = linea.Debit;
                 miAsientoContable.Lines.Credit = linea.Credit;
@@ -131,7 +148,45 @@ namespace WsNsftContabilidad.Data
                 throw new SAPException(miResultado, ConexionSAP.Conexion.compania.GetLastErrorDescription());
             else
                 return Convert.ToInt32(ConexionSAP.Conexion.compania.GetNewObjectKey());
-        } 
+        }
+
+        public bool CuentaReqTercero(string codigoCuenta)
+        {
+            StringBuilder miSentencia = new StringBuilder("select u_infoco02 from OACT where AcctCode = @acctCode");
+            
+            DbCommand miComando = this.baseDatos.GetSqlStringCommand(miSentencia.ToString());
+            this.baseDatos.AddInParameter(miComando, "acctCode", DbType.String, codigoCuenta);
+
+            
+            using (this.reader = this.baseDatos.ExecuteReader(miComando))
+            {
+                while (this.reader.Read())
+                {
+                    if (this.reader.GetValue(0).ToString() == "1" )
+                        return true;
+                }
+            }
+            return false;
+        }
+
+        public bool CuentaAsociada(string codigoCuenta)
+        {
+            StringBuilder miSentencia = new StringBuilder("select LocManTran from OACT where AcctCode = @acctCode");
+
+            DbCommand miComando = this.baseDatos.GetSqlStringCommand(miSentencia.ToString());
+            this.baseDatos.AddInParameter(miComando, "acctCode", DbType.String, codigoCuenta);
+
+
+            using (this.reader = this.baseDatos.ExecuteReader(miComando))
+            {
+                while (this.reader.Read())
+                {
+                    if (this.reader.GetValue(0).ToString() == "Y" )
+                        return true;
+                }
+            }
+            return false;
+        }
         #endregion
     }
 }

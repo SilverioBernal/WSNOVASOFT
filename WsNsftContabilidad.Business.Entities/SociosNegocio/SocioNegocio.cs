@@ -32,7 +32,7 @@ namespace WsNsftContabilidad.Business.Entities.SociosNegocio
         [DataMember]
         public string CardFName { get; set; }
         [DataMember]
-        public string CardType { get; set; }
+        public CardType CustomerCardType { get; set; }
 
         [DataMember]
         public string Address { get; set; }

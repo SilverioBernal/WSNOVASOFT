@@ -24,11 +24,12 @@
     <MetadataSource Address="http://localhost:49734/WsNsftContabilidad.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="WsNsftContabilidad.wsdl" MetadataType="Wsdl" ID="c81cc331-6111-47b7-989f-98c57d7deb51" SourceId="1" SourceUrl="http://localhost:49734/WsNsftContabilidad.svc?wsdl" />
+    <MetadataFile FileName="WsNsftContabilidad2.xsd" MetadataType="Schema" ID="67859c6e-26f1-4e93-bdea-fb7ddf44d1da" SourceId="1" SourceUrl="http://localhost:49734/WsNsftContabilidad.svc?xsd=xsd2" />
     <MetadataFile FileName="WsNsftContabilidad.disco" MetadataType="Disco" ID="071b73e5-0931-4525-b8cf-972854ddd474" SourceId="1" SourceUrl="http://localhost:49734/WsNsftContabilidad.svc?disco" />
+    <MetadataFile FileName="WsNsftContabilidad1.xsd" MetadataType="Schema" ID="562789ef-c520-4ca2-b24e-038413084fdf" SourceId="1" SourceUrl="http://localhost:49734/WsNsftContabilidad.svc?xsd=xsd0" />
     <MetadataFile FileName="WsNsftContabilidad.xsd" MetadataType="Schema" ID="af1afe6b-99eb-424b-ad60-ba715cc02e79" SourceId="1" SourceUrl="http://localhost:49734/WsNsftContabilidad.svc?xsd=xsd1" />
     <MetadataFile FileName="WsNsftContabilidad1.wsdl" MetadataType="Wsdl" ID="651cf3bf-44ee-4ab2-89b3-6b8b6e614480" SourceId="1" SourceUrl="http://localhost:49734/WsNsftContabilidad.svc?wsdl=wsdl0" />
-    <MetadataFile FileName="WsNsftContabilidad1.xsd" MetadataType="Schema" ID="562789ef-c520-4ca2-b24e-038413084fdf" SourceId="1" SourceUrl="http://localhost:49734/WsNsftContabilidad.svc?xsd=xsd0" />
+    <MetadataFile FileName="WsNsftContabilidad.wsdl" MetadataType="Wsdl" ID="c81cc331-6111-47b7-989f-98c57d7deb51" SourceId="1" SourceUrl="http://localhost:49734/WsNsftContabilidad.svc?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
