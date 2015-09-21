@@ -15,7 +15,7 @@ using WsNsftContabilidad.Services.Contracts;
 
 namespace WsNsftContabilidad.Services.Core
 {
-    public class WsNsftContabilidad : iWsNsftContabilidad
+    public class WsSAPNovasoft : iWsSAPNovasoft
     {
         #region Atributos
         /// <summary>

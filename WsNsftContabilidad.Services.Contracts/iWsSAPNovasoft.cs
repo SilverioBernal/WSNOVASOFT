@@ -13,7 +13,7 @@ namespace WsNsftContabilidad.Services.Contracts
 {
     //[ServiceContract]
     [ServiceContract(Namespace = "http://WsNsftContabilidad", Name = "WsNsftContabilidad")]
-    public interface iWsNsftContabilidad
+    public interface iWsSAPNovasoft
     {
         //ASIENTO CONTABLE
         [OperationContract(IsOneWay = false)]

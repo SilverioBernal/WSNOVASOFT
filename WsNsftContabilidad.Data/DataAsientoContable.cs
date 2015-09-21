@@ -35,7 +35,7 @@ namespace WsNsftContabilidad.Data
         {
             //this.conexionBD = ConexionBD.Conexion;
             this.baseDatos = DatabaseFactory.CreateDatabase("SAP");
-        }        
+        }
         #endregion contructor
 
         #region Métodos
@@ -92,21 +92,27 @@ namespace WsNsftContabilidad.Data
                 if (CuentaAsociada(linea.Account))
                 {
                     if (!string.IsNullOrEmpty(linea.socioNegocio.CardCode))
+                    {
                         miAsientoContable.Lines.ShortName = linea.socioNegocio.CardCode;
+                        miAsientoContable.Lines.UserFields.Fields.Item("U_InfoCo01").Value = linea.socioNegocio.CardCode;
+                    }
                     else
+                    {
                         miAsientoContable.Lines.ShortName = linea.U_InfoCo01 == null ? "" : linea.U_InfoCo01;
+                        miAsientoContable.Lines.UserFields.Fields.Item("U_InfoCo01").Value = linea.U_InfoCo01 == null ? "" : linea.U_InfoCo01; ;
+                    }
                 }
                 else
                 {
+                    miAsientoContable.Lines.AccountCode = linea.Account;
+
                     if (CuentaReqTercero(linea.Account))
                     {
                         if (!string.IsNullOrEmpty(linea.socioNegocio.CardCode))
-                            miAsientoContable.Lines.ShortName = linea.socioNegocio.CardCode;
+                            miAsientoContable.Lines.UserFields.Fields.Item("U_InfoCo01").Value = linea.socioNegocio.CardCode;
                         else
-                            miAsientoContable.Lines.ShortName = linea.U_InfoCo01 == null ? "" : linea.U_InfoCo01;
+                            miAsientoContable.Lines.UserFields.Fields.Item("U_InfoCo01").Value = linea.U_InfoCo01 == null ? "" : linea.U_InfoCo01;
                     }
-
-                    miAsientoContable.Lines.AccountCode = linea.Account;
                 }
 
                 miAsientoContable.Lines.Debit = linea.Debit;
@@ -136,9 +142,9 @@ namespace WsNsftContabilidad.Data
                 miAsientoContable.Lines.CostingCode = linea.ProfitCode == null ? "" : linea.ProfitCode;
                 miAsientoContable.Lines.CostingCode2 = linea.OcrCode2 == null ? "" : linea.OcrCode2;
                 miAsientoContable.Lines.CostingCode3 = linea.OcrCode3 == null ? "" : linea.OcrCode3;
+                miAsientoContable.Lines.CostingCode4 = linea.OcrCode3 == null ? "" : linea.OcrCode4;
+                miAsientoContable.Lines.CostingCode5 = linea.OcrCode5 == null ? "" : linea.OcrCode5;
 
-                //UDF Values
-                miAsientoContable.Lines.UserFields.Fields.Item("U_InfoCo01").Value = linea.U_InfoCo01 == null ? "" : linea.U_InfoCo01;
 
                 miAsientoContable.Lines.Add();
             }
@@ -153,16 +159,16 @@ namespace WsNsftContabilidad.Data
         public bool CuentaReqTercero(string codigoCuenta)
         {
             StringBuilder miSentencia = new StringBuilder("select u_infoco02 from OACT where AcctCode = @acctCode");
-            
+
             DbCommand miComando = this.baseDatos.GetSqlStringCommand(miSentencia.ToString());
             this.baseDatos.AddInParameter(miComando, "acctCode", DbType.String, codigoCuenta);
 
-            
+
             using (this.reader = this.baseDatos.ExecuteReader(miComando))
             {
                 while (this.reader.Read())
                 {
-                    if (this.reader.GetValue(0).ToString() == "1" )
+                    if (this.reader.GetValue(0).ToString() == "1")
                         return true;
                 }
             }
@@ -181,7 +187,7 @@ namespace WsNsftContabilidad.Data
             {
                 while (this.reader.Read())
                 {
-                    if (this.reader.GetValue(0).ToString() == "Y" )
+                    if (this.reader.GetValue(0).ToString() == "Y")
                         return true;
                 }
             }

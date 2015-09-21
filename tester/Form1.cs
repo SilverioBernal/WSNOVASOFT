@@ -34,8 +34,8 @@ namespace tester
 
 
             AsientoDetalle linea1 = new AsientoDetalle()
-            {                
-                Account = "19202010",
+            {
+                Account = "11150512",
                 Credit = 1000
             };
             AsientoDetalle linea2 = new AsientoDetalle()
@@ -55,7 +55,7 @@ namespace tester
                 DebPayAcct = "92050103",
                 CustomerCardType = CardType.Cliente
             };
-
+            linea1.socioNegocio = bp;
             linea2.socioNegocio = bp;
 
             asiento.lineas.Add(linea1);

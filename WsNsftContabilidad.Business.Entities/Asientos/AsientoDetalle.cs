@@ -44,6 +44,10 @@ namespace WsNsftContabilidad.Business.Entities.Asientos
         [DataMember]
         public string OcrCode3 { get; set; }
         [DataMember]
+        public string OcrCode4 { get; set; }
+        [DataMember]
+        public string OcrCode5 { get; set; }
+        [DataMember]
         public string U_InfoCo01 { get; set; }
         [DataMember]
         public SocioNegocio socioNegocio { get; set; } 

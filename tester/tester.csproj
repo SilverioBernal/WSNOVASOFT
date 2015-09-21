@@ -80,17 +80,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Service References\Contable_srv\WsNsftContabilidad.wsdl" />
-    <None Include="Service References\Contable_srv\WsNsftContabilidad.xsd">
+    <None Include="Service References\Contable_srv\wssap.wsdl" />
+    <None Include="Service References\Contable_srv\wssap.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Contable_srv\WsNsftContabilidad1.wsdl" />
-    <None Include="Service References\Contable_srv\WsNsftContabilidad1.xsd">
+    <None Include="Service References\Contable_srv\wssap1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Contable_srv\WsNsftContabilidad2.xsd">
+    <None Include="Service References\Contable_srv\wssap2.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\Contable_srv\WsSAPNovasoft.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
@@ -116,7 +116,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\Contable_srv\WsNsftContabilidad.disco" />
+    <None Include="Service References\Contable_srv\wssap.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30501.0
+VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business", "Business", "{DDE5E2D4-E40B-4DD6-B3C4-D2AB66450DD7}"
 EndProject
@@ -72,9 +72,12 @@ Global
 		{7567E243-8669-433B-BC56-4EDD9BD65ED4} = {DDE5E2D4-E40B-4DD6-B3C4-D2AB66450DD7}
 		{24BDDF0C-C10A-4F14-AA33-AAC7C9ED03D3} = {DDE5E2D4-E40B-4DD6-B3C4-D2AB66450DD7}
 		{42349C99-1CA3-49D8-8828-6142BB661A3C} = {B1F95CC5-12DA-4999-8B24-8850A2EA97EA}
+		{3BFBDA69-AA43-4683-B7ED-2CA99C0A87B1} = {CAB71BCF-7441-4DD9-B063-3E36C7189491}
 		{0D522CF9-5D0B-4611-B1B8-F78CB2DF3792} = {3958B752-51A2-4D89-8B05-ABBFDB54D011}
 		{0CDEFA6D-AFE2-4726-A9E4-3A00F711C854} = {3958B752-51A2-4D89-8B05-ABBFDB54D011}
 		{3E49B571-D3E7-4816-950D-ECBFAD471FF1} = {0B0C3C5C-3E55-402D-9252-F139CF589D9F}
-		{3BFBDA69-AA43-4683-B7ED-2CA99C0A87B1} = {CAB71BCF-7441-4DD9-B063-3E36C7189491}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.Data.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.ExceptionHandling.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.Logging.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.ExceptionHandling.Logging.6.0.1304.0\lib\NET45
 	EndGlobalSection
 EndGlobal

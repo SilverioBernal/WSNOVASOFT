@@ -21,15 +21,15 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:49734/WsNsftContabilidad.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:49734/Wssap.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="WsNsftContabilidad2.xsd" MetadataType="Schema" ID="67859c6e-26f1-4e93-bdea-fb7ddf44d1da" SourceId="1" SourceUrl="http://localhost:49734/WsNsftContabilidad.svc?xsd=xsd2" />
-    <MetadataFile FileName="WsNsftContabilidad.disco" MetadataType="Disco" ID="071b73e5-0931-4525-b8cf-972854ddd474" SourceId="1" SourceUrl="http://localhost:49734/WsNsftContabilidad.svc?disco" />
-    <MetadataFile FileName="WsNsftContabilidad1.xsd" MetadataType="Schema" ID="562789ef-c520-4ca2-b24e-038413084fdf" SourceId="1" SourceUrl="http://localhost:49734/WsNsftContabilidad.svc?xsd=xsd0" />
-    <MetadataFile FileName="WsNsftContabilidad.xsd" MetadataType="Schema" ID="af1afe6b-99eb-424b-ad60-ba715cc02e79" SourceId="1" SourceUrl="http://localhost:49734/WsNsftContabilidad.svc?xsd=xsd1" />
-    <MetadataFile FileName="WsNsftContabilidad1.wsdl" MetadataType="Wsdl" ID="651cf3bf-44ee-4ab2-89b3-6b8b6e614480" SourceId="1" SourceUrl="http://localhost:49734/WsNsftContabilidad.svc?wsdl=wsdl0" />
-    <MetadataFile FileName="WsNsftContabilidad.wsdl" MetadataType="Wsdl" ID="c81cc331-6111-47b7-989f-98c57d7deb51" SourceId="1" SourceUrl="http://localhost:49734/WsNsftContabilidad.svc?wsdl" />
+    <MetadataFile FileName="wssap.xsd" MetadataType="Schema" ID="8cb68a1e-739c-4e0d-bd6b-d3eaf7399f33" SourceId="1" SourceUrl="http://localhost:49734/wssap.svc?xsd=xsd2" />
+    <MetadataFile FileName="wssap.wsdl" MetadataType="Wsdl" ID="74c530c8-5ab7-4690-81a0-40de979dd681" SourceId="1" SourceUrl="http://localhost:49734/wssap.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="wssap.disco" MetadataType="Disco" ID="1fad3d41-5787-47c8-b1a3-c20393eff2d1" SourceId="1" SourceUrl="http://localhost:49734/wssap.svc?disco" />
+    <MetadataFile FileName="WsSAPNovasoft.wsdl" MetadataType="Wsdl" ID="832fd5b9-0777-4a94-afe3-20dc85418cf6" SourceId="1" SourceUrl="http://localhost:49734/wssap.svc?wsdl" />
+    <MetadataFile FileName="wssap1.xsd" MetadataType="Schema" ID="8e390a6a-37af-4fac-9146-e51b76421426" SourceId="1" SourceUrl="http://localhost:49734/wssap.svc?xsd=xsd1" />
+    <MetadataFile FileName="wssap2.xsd" MetadataType="Schema" ID="05dcca3c-bfc0-4ad6-be8f-c61bba4ff97e" SourceId="1" SourceUrl="http://localhost:49734/wssap.svc?xsd=xsd0" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
