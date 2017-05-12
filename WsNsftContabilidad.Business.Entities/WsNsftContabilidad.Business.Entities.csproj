@@ -65,6 +65,7 @@
   <ItemGroup>
     <Compile Include="Asientos\Asiento.cs" />
     <Compile Include="Asientos\AsientoDetalle.cs" />
+    <Compile Include="Asientos\Enums.cs" />
     <Compile Include="Excepciones\BusinessException.cs" />
     <Compile Include="Excepciones\Error.cs" />
     <Compile Include="Excepciones\SAPException.cs" />

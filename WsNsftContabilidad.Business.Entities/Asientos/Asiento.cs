@@ -27,13 +27,49 @@ namespace WsNsftContabilidad.Business.Entities.Asientos
         [DataMember]
         public string Project { get; set; }
         [DataMember]
-        public DateTime TaxDate { get; set; }
+        public DateTime? TaxDate { get; set; }
         [DataMember]
-        public DateTime VatDate { get; set; }
+        public DateTime? VatDate { get; set; }                
+
+        /*Control de cambios 2016-11-03*/
         [DataMember]
-        public string StampTax { get; set; }
+        public bool? StampTax { get; set; }
+
         [DataMember]
-        public string AutoVat { get; set; }
+        public bool? AutoVat { get; set; }
+
+        [DataMember]
+        public string indicator { get; set; }
+
+        [DataMember]
+        public bool? AutoStorno { get; set; }
+
+        [DataMember]
+        public DateTime? StornoDate { get; set; }
+
+        [DataMember]
+        public int? series { get; set; }
+
+        [DataMember]
+        public bool? ReportEU { get; set; }
+
+        [DataMember]
+        public bool? Report347 { get; set; }
+
+        [DataMember]
+        public int? Location { get; set; }
+       
+        [DataMember]
+        public long CreateBy { get; set; }
+
+        [DataMember]
+        public bool? BlockDunn { get; set; }
+
+        [DataMember]
+        public bool? AutoWT { get; set; }
+
+        [DataMember]
+        public bool? Corisptivi { get; set; }
 
         [DataMember]
         public List<AsientoDetalle> lineas { get; set; }
@@ -47,9 +83,7 @@ namespace WsNsftContabilidad.Business.Entities.Asientos
             this.Ref2 = string.Empty;
             this.TransCode = string.Empty;
             this.Project = string.Empty;
-            this.StampTax = string.Empty;
-            this.AutoVat = string.Empty;
-
+            
             lineas = new List<AsientoDetalle>();
         }
         #endregion

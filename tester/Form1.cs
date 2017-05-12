@@ -27,7 +27,7 @@ namespace tester
 
             Asiento asiento = new Asiento()
             {
-                TransCode = "PAGO",
+                TransCode = "CM",
                 Memo = "Hola",
                 lineas = new List<AsientoDetalle>()
             };
@@ -35,12 +35,12 @@ namespace tester
 
             AsientoDetalle linea1 = new AsientoDetalle()
             {
-                Account = "11150512",
+                Account = "1105050101",
                 Credit = 1000
             };
             AsientoDetalle linea2 = new AsientoDetalle()
             {
-                Account = "92050103",
+                Account = "1105050102",
                 Debit = 1000,
             };
 
@@ -55,8 +55,8 @@ namespace tester
                 DebPayAcct = "92050103",
                 CustomerCardType = CardType.Cliente
             };
-            linea1.socioNegocio = bp;
-            linea2.socioNegocio = bp;
+            //linea1.socioNegocio = bp;
+            //linea2.socioNegocio = bp;
 
             asiento.lineas.Add(linea1);
             asiento.lineas.Add(linea2);

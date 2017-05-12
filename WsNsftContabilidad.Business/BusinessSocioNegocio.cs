@@ -83,7 +83,7 @@ namespace WsNsftContabilidad.Business
                 {
                     outEx.Data.Add("1", "3");
                     outEx.Data.Add("2", "NA");
-                    outEx.Data.Add("3", outEx.Message);
+                    outEx.Data.Add("3", outEx.Message + " Descripción: " + ex.Message);
                     throw outEx;
                 }
                 else
@@ -151,7 +151,7 @@ namespace WsNsftContabilidad.Business
                 {
                     outEx.Data.Add("1", "3");
                     outEx.Data.Add("2", "NA");
-                    outEx.Data.Add("3", outEx.Message);
+                    outEx.Data.Add("3", outEx.Message + " Descripción: " + ex.Message);
                     throw outEx;
                 }
                 else
